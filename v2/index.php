@@ -4,8 +4,8 @@ session_start();
 
 // Si l'utilisateur est connecté, on récupère son identité via la session.
 $identity = null;
-if (isset($_SESSION['identity'])) {
-    $identity = $_SESSION['identity'];
+if (isset($_SESSION['username'])) {
+    $identity = $_SESSION['username'];
 }
 ?>
 
