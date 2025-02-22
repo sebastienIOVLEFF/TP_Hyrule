@@ -21,17 +21,17 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION[
             <?php require 'component/card.php';
             $compteDesGardiensCard = new Card(
                 'compte des gardiens',
-                'compte des gardiens img',
+                'compteDesGardiens.webp',
                 'compteDesGardiens.php',
                 'compte des gardiens description');
             $sanctuairesPersonnelsCard = new Card(
                 'sanctuaires personnels',
-                'sanctuaires personnels img',
+                'sanctuairesPersonnels.webp',
                 'sanctuairesPersonnels.php',
                 'sanctuaires personnels description');
             $ordresEtAlliancesCard = new Card(
                 'ordres et alliances',
-                'ordres et alliances img',
+                'ordresEtAlliances.webp',
                 'ordresEtAlliances.php',
                 'ordres et alliances description');
             ?>

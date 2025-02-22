@@ -13,8 +13,10 @@ if (isset($_SESSION['username'])) {
 <html>
     <head>
         <title>Page d'accueil</title>
+        <link rel="stylesheet" href="./style/style.css">
     </head>
     <body>
+        <?php require 'component/header.php'; ?>
         <h1>Page d'accueil</h1>
         <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true): ?>
         <strong>Bienvenue, <?= $identity ?></strong> <a href="logout.php">Déconnexion</a>

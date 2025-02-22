@@ -14,7 +14,7 @@ class Card{
   }
   private function display(){
     echo <<<HTML
-    <div class="card">
+    <div class="card" style="background-image: url({$this->img});">
       <div class="card-body">
         <h5 class="card-title">{$this->name}</h5>
         <p class="card-description">{$this->description}</p>
