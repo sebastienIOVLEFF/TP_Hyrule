@@ -19,7 +19,7 @@
     </div>
     <?php else: ?>
         <div class="logo">
-        <a href="dashboard.php">TP Hyrule</a>
-    </div>
+            <a href="dashboard.php">TP Hyrule</a>
+        </div>
     <?php endif; ?>
 </header>

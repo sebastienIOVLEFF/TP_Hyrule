@@ -7,6 +7,8 @@ $identity = null;
 if (isset($_SESSION['username'])) {
     $identity = $_SESSION['username'];
 }
+
+$_SESSION["pageName"] = "Hyrule";
 ?>
 
 <!DOCTYPE html>
