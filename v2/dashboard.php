@@ -15,7 +15,7 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION[
     </head>
     <body class="dashboard">
 
-        <h1>dashboard</h1>
+        <?php require 'component/header.php'; ?>
 
         <div class="cardContainer">
             <?php require 'component/card.php';
