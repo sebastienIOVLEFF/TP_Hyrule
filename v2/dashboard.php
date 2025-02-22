@@ -23,8 +23,7 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION[
                 'compte des gardiens',
                 'compte des gardiens img',
                 'compteDesGardiens.php',
-                'compte des gardiens description'
-            );
+                'compte des gardiens description');
             $sanctuairesPersonnelsCard = new Card(
                 'sanctuaires personnels',
                 'sanctuaires personnels img',
@@ -37,16 +36,5 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION[
                 'ordres et alliances description');
             ?>
         </div>
-
-
-
-        
-        <p>variables de session :
-        <?php
-            echo '<pre>';
-            var_dump($_SESSION);
-            echo '</pre>';
-        ?>
-        </p>
     </body>
 </html>
