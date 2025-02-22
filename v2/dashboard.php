@@ -11,9 +11,35 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION[
 <html>
     <head>
         <title>dashboard</title>
+        <link rel="stylesheet" href="./style/style.css">
     </head>
-    <body>
+    <body class="dashboard">
+
         <h1>dashboard</h1>
+
+        <div class="cardContainer">
+            <?php require 'component/card.php';
+            $compteDesGardiensCard = new Card(
+                'compte des gardiens',
+                'compte des gardiens img',
+                'compteDesGardiens.php',
+                'compte des gardiens description'
+            );
+            $sanctuairesPersonnelsCard = new Card(
+                'sanctuaires personnels',
+                'sanctuaires personnels img',
+                'sanctuairesPersonnels.php',
+                'sanctuaires personnels description');
+            $ordresEtAlliancesCard = new Card(
+                'ordres et alliances',
+                'ordres et alliances img',
+                'ordresEtAlliances.php',
+                'ordres et alliances description');
+            ?>
+        </div>
+
+
+
         
         <p>variables de session :
         <?php
