@@ -24,11 +24,10 @@ if (isset($_SESSION['username'])) {
 
         <?php else: ?>
         <a href="login.php">Connexion</a>
-        <a href="signup.php">Inscription</a>
         <?php endif; ?>
         
         <p>
-            Ceci est un simple site web pour démontrer les avantages d'un framework PHP et les inconvénients du PHP "pur".
+            page d'accueil du site
         </p>
         <p>variables de session :
         <?php
