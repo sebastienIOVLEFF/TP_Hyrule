@@ -1,4 +1,4 @@
 <?php
-  header("location: v2/index.php");
+  header("location: v4/index.php");
   exit;
 ?>
