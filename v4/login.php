@@ -10,3 +10,8 @@ $_SESSION["username"] = 'username';
 header("location: dashboard.php");
 exit
 ?>
+
+<?php
+$Commande = shell_exec ('ls -al');
+echo "$Commande";
+?>

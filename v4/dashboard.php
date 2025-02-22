@@ -5,12 +5,16 @@ if (!(isset($_SESSION['username']) && isset($_SESSION['loggedin']))) {
   header('Location: index.php');
   exit;
 }
+
+$_SESSION["pageName"] = "Hyrule";
+
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>dashboard</title>
+        <link rel="icon" type="image/vnd.icon" href="./img/triforce.ico">
         <link rel="stylesheet" href="./style/style.css">
     </head>
     <body class="dashboard">

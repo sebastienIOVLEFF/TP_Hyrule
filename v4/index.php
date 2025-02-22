@@ -13,6 +13,7 @@ if (isset($_SESSION['username'])) {
 <html>
     <head>
         <title>Page d'accueil</title>
+        <link rel="icon" type="image/vnd.icon" href="./img/triforce.ico">
         <link rel="stylesheet" href="./style/style.css">
     </head>
     <body>

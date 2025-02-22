@@ -3,7 +3,7 @@
 <header class="header">
     <?php if (isset($_SESSION['username']) && isset($_SESSION['loggedin'])): ?>
     <div class="logo">
-        <a href="dashboard.php">Hyrule Dashboard</a>
+        <?php echo "<img src='./img/triforce.ico'><a href='dashboard.php'>{$_SESSION['pageName']}</a>" ?>
     </div>
     <nav class="nav">
         <ul>
