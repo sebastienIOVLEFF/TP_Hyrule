@@ -25,13 +25,14 @@ if (isset($_GET['toggle_terminal'])) {
 ?>
 
 <div style="margin: 10px;">
-    <a href="?toggle_terminal=1" style="text-decoration: none; padding: 5px 10px; background: #444; color: #fff; border-radius: 5px;">
+    <button id="toggleTerminalBtn">
         <?= $_SESSION['terminal_visible'] ? "Masquer le terminal" : "Afficher le terminal" ?>
-    </a>
+    </button>
 </div>
 
-<?php if ($_SESSION['terminal_visible']): ?>
-    <div class="terminal">
-        <pre><?php echo htmlspecialchars($logs); ?></pre>
-    </div>
-<?php endif; ?>
+<div id="terminalContainer" class="terminal" style="display: <?= $_SESSION['terminal_visible'] ? 'block' : 'none' ?>;">
+    <pre id="terminalLogs"><?php echo htmlspecialchars($logs); ?></pre>
+</div>
+
+<script src="component/terminal.js"></script>
+

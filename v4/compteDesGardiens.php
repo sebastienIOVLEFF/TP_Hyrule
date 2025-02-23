@@ -8,6 +8,8 @@ if (!(isset($_SESSION['username']) && isset($_SESSION['loggedin']))) {
 
 $_SESSION["pageName"] = "Compte des Gardiens";
 
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
   $command = escapeshellcmd($_POST["command"]);
   $output = shell_exec($command);
@@ -25,13 +27,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
     <body>
         <?php require 'component/header.php'; ?>
         <div class="page-content">
+        <!-- <?php
+            echo '<pre>';
+            var_dump($_SESSION);
+            echo '</pre>';
+        ?> -->
             <p>
                 page Compte des Gardiens
             </p>
             <h2>Exécution de commandes</h2>
 
-
-            <?php require 'component/command_executor.php'; ?>
+            
+        <?php require 'component/accordion.php'; ?>
+        <?php $accordion = new Acc(['addguardianform.php', 'delGuardianForm.php']); ?>
 
 
         </div>
