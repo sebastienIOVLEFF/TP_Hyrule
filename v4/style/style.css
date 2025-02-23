@@ -1,4 +1,6 @@
-body {background-image: radial-gradient(circle at center center, transparent 0%,rgb(33,33,33) 99%),repeating-linear-gradient(0deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, rgb(33,33,33),rgb(33,33,33));}
+body {
+  background-image: radial-gradient(circle at center center, transparent 0%,rgb(33,33,33) 99%),repeating-linear-gradient(0deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, rgb(33,33,33),rgb(33,33,33));
+}
 
 /* Global Styles */
 * {
@@ -83,6 +85,27 @@ body.dashboard {
 
 .logout-btn:hover {
   background: #cc0000;
+}
+
+/* page content */
+
+.page-content {
+  padding: 40px;
+  color: white;
+}
+
+.terminal {
+  background: black;
+  color: #0f0;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #0f0;
+  font-family: monospace;
+  position: absolute;
+  width: 100%;
+  
+  bottom: 0;
 }
 
 /* CARD CONTAINER */

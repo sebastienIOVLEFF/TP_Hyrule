@@ -19,16 +19,10 @@ $_SESSION["pageName"] = "Sanctuaires Personnels";
     </head>
     <body>
         <?php require 'component/header.php'; ?>
-        
-        <p>
-            page Sanctuaires Personnels
-        </p>
-        <p>variables de session :
-        <?php
-            echo '<pre>';
-            var_dump($_SESSION);
-            echo '</pre>';
-        ?>
-        </p>
+        <div class="page-content">
+            <p>
+                page Sanctuaires Personnels
+            </p>
+        </div>
     </body>
 </html>

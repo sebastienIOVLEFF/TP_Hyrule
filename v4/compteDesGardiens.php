@@ -8,6 +8,11 @@ if (!(isset($_SESSION['username']) && isset($_SESSION['loggedin']))) {
 
 $_SESSION["pageName"] = "Compte des Gardiens";
 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
+  $command = escapeshellcmd($_POST["command"]);
+  $output = shell_exec($command);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,16 +24,17 @@ $_SESSION["pageName"] = "Compte des Gardiens";
     </head>
     <body>
         <?php require 'component/header.php'; ?>
-        
-        <p>
-            page Compte des Gardiens
-        </p>
-        <p>variables de session :
-        <?php
-            echo '<pre>';
-            var_dump($_SESSION);
-            echo '</pre>';
-        ?>
-        </p>
+        <div class="page-content">
+            <p>
+                page Compte des Gardiens
+            </p>
+            <h2>Exécution de commandes</h2>
+
+
+            <?php require 'component/command_executor.php'; ?>
+
+
+        </div>
+        <?php require 'component/terminal.php'; ?>
     </body>
 </html>

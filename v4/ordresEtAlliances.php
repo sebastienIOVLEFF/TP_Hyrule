@@ -19,16 +19,10 @@ $_SESSION["pageName"] = "Ordres et Aliances";
     </head>
     <body>
         <?php require 'component/header.php'; ?>
-        
-        <p>
-            page Ordres et Aliances
-        </p>
-        <p>variables de session :
-        <?php
-            echo '<pre>';
-            var_dump($_SESSION);
-            echo '</pre>';
-        ?>
-        </p>
+        <div class="page-content">
+            <p>
+                page Ordres et Aliances
+            </p>
+        </div>
     </body>
 </html>
