@@ -24,5 +24,6 @@ $_SESSION["pageName"] = "Ordres et Aliances";
                 page Ordres et Aliances
             </p>
         </div>
+        <?php require 'component/terminal.php'; ?>
     </body>
 </html>

@@ -24,5 +24,6 @@ $_SESSION["pageName"] = "Sanctuaires Personnels";
                 page Sanctuaires Personnels
             </p>
         </div>
+        <?php require 'component/terminal.php'; ?>
     </body>
 </html>
