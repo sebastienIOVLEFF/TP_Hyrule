@@ -24,11 +24,11 @@ if (isset($_GET['toggle_terminal'])) {
 }
 ?>
 
-<!-- <div style="margin: 10px;">
+<div style="margin: 10px;">
     <a href="?toggle_terminal=1" style="text-decoration: none; padding: 5px 10px; background: #444; color: #fff; border-radius: 5px;">
         <?= $_SESSION['terminal_visible'] ? "Masquer le terminal" : "Afficher le terminal" ?>
     </a>
-</div> -->
+</div>
 
 <?php if ($_SESSION['terminal_visible']): ?>
     <div class="terminal">
