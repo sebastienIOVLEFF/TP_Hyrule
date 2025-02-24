@@ -1,20 +1,14 @@
 <?php
-
-// Chemin du fichier log
-$logFile = __DIR__ .  "/../logs/". $_SESSION['username']." - ". $_SESSION['pageName'].".log";
+// COMPOSANT DE TEST POUR EXECUTER DES COMMANDES
 
 // Fonction pour exécuter une commande et enregistrer le résultat
-function executeCommand($command) {
-    global $logFile;
+function executeCommand($command)
+{
+    $logFile = __DIR__ . "/../logs/" . $_SESSION['username'] . " - " . $_SESSION['pageName'] . ".log";
 
-    // Vérification et sécurisation de la commande
-    $allowedCommands = ['ls', 'whoami', 'uptime', 'df -h', 'free -m']; // Ajoute tes commandes autorisées
-    if (!in_array($command, $allowedCommands)) {
-        $output = "❌ Commande non autorisée.";
-    } else {
-        $escapedCommand = escapeshellcmd($command);
-        $output = shell_exec($escapedCommand . ' 2>&1');
-    }
+    $escapedCommand = escapeshellcmd($command);
+    $output = shell_exec($escapedCommand . ' 2>&1');
+
 
     // Enregistrer la commande dans le log
     $logEntry = "$ " . $command . "\n" . $output . "\n";

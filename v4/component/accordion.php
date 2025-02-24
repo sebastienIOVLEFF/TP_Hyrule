@@ -1,31 +1,34 @@
 <?php
-class Acc{
-  public $items;
+class Acc
+{
+    public $items;
 
-  public function __construct($items = []){
-    $this->items = $items;
-    $this->display();
-  }
-  private function display(){
+    public function __construct($items = [])
+    {
+        $this->items = $items;
+        $this->display();
+    }
+    private function display()
+    {
 
-    foreach ($this->items as $item) {
-    $name = $item;
-    echo <<<HTML
+        foreach ($this->items as $item) {
+            $name = $item;
+            echo <<<HTML
     <div class="accordion">
         <div class="accordion-item">
             <button class="accordion-header">{$name}</button>
             <div class="accordion-content">
 HTML;
 
-        require $item;
+            require $item;
 
-    echo <<<HTML
+            echo <<<HTML
             </div>
         </div>
     </div>
 HTML;
-}
-echo <<<HTML
+        }
+        echo <<<HTML
     <script>
         document.querySelectorAll('.accordion-header').forEach(button => {
             button.addEventListener('click', function () {
@@ -43,6 +46,6 @@ echo <<<HTML
         });
     </script>
 HTML;
-  }
+    }
 }
 ?>
