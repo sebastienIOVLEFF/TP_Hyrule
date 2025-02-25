@@ -170,7 +170,7 @@ body.dashboard {
             /* Accordion Container */
             .accordion {
               width: 100%;
-              max-width: 600px;
+              max-width: 1000px;
               margin: auto;
           }
         
@@ -216,6 +216,7 @@ body.dashboard {
               border: 1px solid #ccc;
               padding: 5px;
               width: 100%;
+              max-width: 350px;
           }
         
           /* Form Inputs */
