@@ -7,14 +7,19 @@ $identity = null;
 if (isset($_SESSION['username'])) {
     $identity = $_SESSION['username'];
 }
+
+$_SESSION["pageName"] = "Hyrule";
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>Page d'accueil</title>
+        <link rel="icon" type="image/vnd.icon" href="./img/triforce.ico">
+        <link rel="stylesheet" href="./style/style.css">
     </head>
     <body>
+        <?php require 'component/header.php'; ?>
         <h1>Page d'accueil</h1>
         <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true): ?>
         <strong>Bienvenue, <?= $identity ?></strong> <a href="logout.php">Déconnexion</a>
@@ -22,11 +27,10 @@ if (isset($_SESSION['username'])) {
 
         <?php else: ?>
         <a href="login.php">Connexion</a>
-        <a href="signup.php">Inscription</a>
         <?php endif; ?>
         
         <p>
-            Ceci est un simple site web pour démontrer les avantages d'un framework PHP et les inconvénients du PHP "pur".
+            page d'accueil du site
         </p>
         <p>variables de session :
         <?php

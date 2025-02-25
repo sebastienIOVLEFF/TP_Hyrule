@@ -1,18 +1,23 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
  
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+// if($_SERVER["REQUEST_METHOD"] == "POST"){
  
    
-}
-$user = "root";
-$pass = "";
+// }
+$user = "pdo_user";
+$pass = "P@ssw0rd123!";
+
+
+
 
 // Connexion MySQL. On s'est connecté à notre bdd (base de données)
 $bdd = new PDO('mysql:host=localhost;dbname=hyrule', $user, $pass);
 
-var_dump($donnees);die;
+var_dump($donne);die;
 
 
 ?>
