@@ -21,13 +21,13 @@ $_SESSION["pageName"] = "Ordres et Aliances";
 </head>
 
 <body>
-    <?php require 'component/header.php'; ?>
+    <?php require_once 'component/header.php'; ?>
     <div class="page-content">
         <p>
             page Ordres et Aliances
         </p>
     </div>
-    <?php require 'component/terminal.php'; ?>
+    <?php require_once 'component/terminal.php'; ?>
 </body>
 
 </html>

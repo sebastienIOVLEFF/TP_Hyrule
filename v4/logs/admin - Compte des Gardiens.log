@@ -37,3 +37,53 @@ ou externe, un programme ex‚cutable ou un fichier de commandes.
 
 $ echo '"yukyu":****' | sudo chpasswd
 test
+$ sudo useradd -m -G "Group2" "qx"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ echo '"qx":***' | sudo chpasswd
+test
+$ sudo useradd -m -G "Group1,Group2" "zfa"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ echo '"zfa":****' | sudo chpasswd
+test
+$ sudo useradd -m -G "Group2,Group3" "fzz"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ echo '"fzz":**' | sudo chpasswd
+test
+$ sudo useradd -m -G "Group1,Group2,Group3" "vrvr"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ echo '"vrvr":***' | sudo chpasswd
+
+$ sudo useradd -m -G "Group2,Group3" "jj'rt"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ echo '"jj'rt":***' | sudo chpasswd
+
+$ sudo useradd -m -G "Group3" "be"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ echo '"be":**' | sudo chpasswd
+
+$ sudo useradd -m "g"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ echo '"g":*' | sudo chpasswd
+
+$ sudo  deluser --remove-all-files "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo  deluser --remove-all-files "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+

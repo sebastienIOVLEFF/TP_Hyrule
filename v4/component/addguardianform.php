@@ -2,7 +2,6 @@
 
 $groups = array("Group1", "Group2", "Group3");
 $username_err = "";
-$name = "test";
 
 // Traitement du formulaire si une commande est soumise
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
@@ -22,13 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
         if (!empty($_POST["password"])) {
             $password = $_POST["password"];
             $chpasswdCmd = "echo '$username:$password' | sudo chpasswd";
-            shell_exec($chpasswdCmd);
+            $result = shell_exec($chpasswdCmd);
 
             // log the censored version of the command
             $censored_password = str_repeat("*", strlen($password));
             $censored_chpasswdCmd = "echo '$username:$censored_password' | sudo chpasswd";
 
-            $output .= "\n" . logCommand($censored_chpasswdCmd, 'test');
+            $output .= "\n" . logCommand($censored_chpasswdCmd, $result) . "\n";
         }
 
         $_SESSION["last_command"] = ["cmd" => $payload, "output" => $output];
