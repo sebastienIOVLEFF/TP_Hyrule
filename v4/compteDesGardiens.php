@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
 </head>
 
 <body>
+    <?php require 'component/command_executor.php'; ?>
     <?php require 'component/header.php'; ?>
     <div class="page-content">
 
@@ -38,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
 
 
         <?php require 'component/accordion.php'; ?>
-        <?php $accordion = new Acc(['addguardianform.php', 'delGuardianForm.php', 'command_executor.php']); ?>
+        <?php $accordion = new Acc(['addguardianform.php', 'delGuardianForm.php']); ?>
 
 
     </div>
