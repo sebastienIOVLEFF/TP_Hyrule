@@ -16,6 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
     $output = shell_exec($command);
 }
 
+require_once 'component/command_executor.php';
+require_once 'component/fetch_data_service.php';
+$_SESSION["groups"] = getGroups();
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
 </head>
 
 <body>
-    <?php require_once 'component/command_executor.php'; ?>
     <?php require_once 'component/header.php'; ?>
     <div class="page-content">
 
@@ -39,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
 
 
         <?php require_once 'component/accordion.php'; ?>
-        <?php $accordion = new Acc(['addguardianform.php', 'delGuardianForm.php', 'updateGuardianForm.php']); ?>
+        <?php $accordion = new Acc(['addguardianform.php', 'delGuardianForm.php', 'updateGuardianForm.php', 'TESTform.php']); ?>
 
 
     </div>

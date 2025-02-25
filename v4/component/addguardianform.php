@@ -1,6 +1,6 @@
 <?php
 
-$groups = array("Group1", "Group2", "Group3");
+$groups = $_SESSION["groups"];
 $username_err = "";
 
 // Traitement du formulaire si une commande est soumise
@@ -49,8 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
         </div>
         <!-- user name input -->
         <div class="form-group">
-            <label>Name</label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" name="name" class="form-control" placeholder="Nom d'utilisateur">
             <span class="invalid-feedback"><?php echo $username_err; ?></span>
         </div>
         <!-- Scrollable checkbox section -->
@@ -62,12 +61,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
                     <?php echo htmlspecialchars($group, ENT_QUOTES, 'UTF-8'); ?>
                 </label>
             <?php } ?>
+            <label>
+                <input style="width: 100%; height: 30px;" type="text" name="group[]" placeholder="Ajouter un groupe" />
+            </label>
         </div>
 
         <!-- Password input -->
         <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control">
+            <input type="password" name="password" class="form-control" placeholder="Mot de passe">
         </div>
 
         <!-- Submit button -->
