@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
 
 
         <?php require_once 'component/accordion.php'; ?>
-        <?php $accordion = new Acc(['addguardianform.php', 'delGuardianForm.php']); ?>
+        <?php $accordion = new Acc(['addguardianform.php', 'delGuardianForm.php', 'updateGuardianForm.php']); ?>
 
 
     </div>

@@ -6,7 +6,6 @@ $username_err = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "delGuardian") {
     if (!empty($_POST["name"])) {
         $username = escapeshellarg($_POST["name"]);
-        $groups = !empty($_POST["group"]) ? escapeshellarg(implode(',', $_POST["group"])) : "";
 
         // Create the user without setting a password initially
         $payload = "sudo  deluser --remove-all-files";

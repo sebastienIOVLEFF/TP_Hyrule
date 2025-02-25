@@ -1,89 +1,25 @@
-$ sudo useradd -m -G "Group1,Group2,Group3" "test"
+=== Terminal Log ===
+$ sudo usermod -a -G "test"
 'sudo' n'est pas reconnu en tant que commande interne
 ou externe, un programme ex‚cutable ou un fichier de commandes.
 
-$ echo '"test":$2y$12$FqPJ9.rz.EdGlFFfzDK2je822BTkz8o0phQn8wA1dnpeYuJz.8p92' | sudo chpasswd -e
-'"test":$2y$12$FqPJ9.rz.EdGlFFfzDK2je822BTkz8o0phQn8wA1dnpeYuJz.8p92' | sudo chpasswd -e 
-
-$ sudo useradd -m -G "Group1,Group2,Group3" "test"
+$ sudo usermod -a -G "testef"
 'sudo' n'est pas reconnu en tant que commande interne
 ou externe, un programme ex‚cutable ou un fichier de commandes.
 
-$ sudo useradd -m -G "Group1,Group2,Group3" "aa"
+$ "Group2,Group3"
+'"Group2' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo usermod -a -G "Group2,Group3"
 'sudo' n'est pas reconnu en tant que commande interne
 ou externe, un programme ex‚cutable ou un fichier de commandes.
 
-$ sudo useradd -m -G "Group1,Group3" "aaafe"
+$ sudo usermod -a -G "Group2" "sf"
 'sudo' n'est pas reconnu en tant que commande interne
 ou externe, un programme ex‚cutable ou un fichier de commandes.
 
-$ echo '"aaafe":fff' | sudo chpasswd
-test
-$ sudo useradd -m -G "Group1,Group2" "d"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"d":QQQ' | sudo chpasswd
-test
-$ sudo useradd -m -G "Group2,Group3" "dd"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"dd":' | sudo chpasswd
-test
-$ sudo useradd -m -G "Group1,Group3" "yukyu"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"yukyu":****' | sudo chpasswd
-test
-$ sudo useradd -m -G "Group2" "qx"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"qx":***' | sudo chpasswd
-test
-$ sudo useradd -m -G "Group1,Group2" "zfa"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"zfa":****' | sudo chpasswd
-test
-$ sudo useradd -m -G "Group2,Group3" "fzz"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"fzz":**' | sudo chpasswd
-test
-$ sudo useradd -m -G "Group1,Group2,Group3" "vrvr"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"vrvr":***' | sudo chpasswd
-
-$ sudo useradd -m -G "Group2,Group3" "jj'rt"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"jj'rt":***' | sudo chpasswd
-
-$ sudo useradd -m -G "Group3" "be"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"be":**' | sudo chpasswd
-
-$ sudo useradd -m "g"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ echo '"g":*' | sudo chpasswd
-
-$ sudo  deluser --remove-all-files "test"
-'sudo' n'est pas reconnu en tant que commande interne
-ou externe, un programme ex‚cutable ou un fichier de commandes.
-
-$ sudo  deluser --remove-all-files "test"
+$ sudo usermod -a -G "Group2,Group3" ",g"
 'sudo' n'est pas reconnu en tant que commande interne
 ou externe, un programme ex‚cutable ou un fichier de commandes.
 
