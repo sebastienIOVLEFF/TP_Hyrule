@@ -1,32 +1,28 @@
 <?php
 ob_start();
 
-
-if (!(isset($_SESSION['username']) && isset($_SESSION['loggedin']))) {
-    header('Location: index.php');
-    exit;
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
 
-$_SESSION["pageName"] = "nouveau_sanctuaire";
-
 ?>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <div class="form-container">
+        <div class="form-group">
+            <label for="command">groupadd</label>
+            <input type="command" name="commande" class="form-control" value="<?php echo isset($_POST['command']) ? htmlspecialchars($_POST['command'], ENT_QUOTES, 'UTF-8') : ''; ?>">>
+            <span class="invalid-feedback"><?php echo $command_err; ?></span>
+        </div>
+        <!-- user name input -->
+        <div class="form-group">
+            <input type="submit" value="Exécuter" class="btn btn-primary">
+        </div>
+    </form>
+      
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>nouveau_sanctuaire</title>
-    <link rel="icon" type="image/vnd.icon" href="./img/triforce.ico">
-    <link rel="stylesheet" href="./style/style.css">
-</head>
-
-<body>
-    <?php require_once 'component/header.php'; ?>   
-   
-    <div class="page-content">
-        <?php require 'nouveau_sanctuaire.php'; ?>
+        <!-- Submit button -->
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </div>
     </div>
-    <?php require 'component/terminal.php'; ?>
-</body>
-
-</html>
+</form>
