@@ -79,3 +79,11 @@ ou externe, un programme ex‚cutable ou un fichier de commandes.
 
 $ echo '"g":*' | sudo chpasswd
 
+$ sudo  deluser --remove-all-files "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo  deluser --remove-all-files "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
