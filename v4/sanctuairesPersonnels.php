@@ -23,9 +23,7 @@ $_SESSION["pageName"] = "Sanctuaires Personnels";
 <body>
     <?php require 'component/header.php'; ?>
     <div class="page-content">
-        <p>
-            page Sanctuaires Personnels
-        </p>
+        <?php require 'nouveau_sanctuaire.php'; ?>
     </div>
     <?php require 'component/terminal.php'; ?>
 </body>
