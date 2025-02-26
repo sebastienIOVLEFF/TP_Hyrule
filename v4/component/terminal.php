@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    exit;
+}
+
 // Chemin du fichier log
 $logFile = __DIR__ . "/../logs/" . $_SESSION['username'] . " - " . $_SESSION['pageName'] . ".log";
 

@@ -16,7 +16,7 @@ function getGroups()
 }
 
 /**
- * fetch the users from the /etc/group file
+ * fetch the users from the /etc/passwd file
  *
  * @return array|bool an array containing all the users registered
  */

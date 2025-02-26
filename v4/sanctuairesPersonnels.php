@@ -8,7 +8,7 @@ if (!(isset($_SESSION['username']) && isset($_SESSION['loggedin']))) {
 }
 
 $_SESSION["pageName"] = "Sanctuaires Personnels";
-
+require_once 'component/command_executor.php';
 ?>
 
 <!DOCTYPE html>
