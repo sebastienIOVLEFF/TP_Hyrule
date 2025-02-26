@@ -37,3 +37,86 @@ ou externe, un programme ex‚cutable ou un fichier de commandes.
 
 $ echo '"vs":***' | sudo chpasswd
 
+$ sudo  deluser --remove-all-files "fe"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo  deluser --remove-all-files "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ cmd
+Microsoft Windows [version 10.0.22631.4890]
+(c) Microsoft Corporation. Tous droits r‚serv‚s.
+
+C:\wamp64\www\tp_hyrule\v4>
+$ d
+'d' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ open
+'open' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ ls
+'ls' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ .
+'.' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ ./index.php
+'.' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ cd
+C:\wamp64\www\tp_hyrule\v4
+
+$ cd
+C:\wamp64\www\tp_hyrule\v4
+
+$ test
+test
+$ test
+test
+$ test
+test
+$ test
+test2
+$ test
+test
+$ test
+test2
+$ test
+test
+$ test
+test2
+$ test
+test
+$ test
+test2
+$ test
+test
+$ test
+test
+$ test
+test2
+$ test
+test
+$ test
+test2
+$ test
+test
+$ test
+test
+$ test
+test2
+$ sudo usermod -a -G "" "user3"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo usermod -a -G "" "user3"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
