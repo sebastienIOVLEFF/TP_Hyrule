@@ -56,6 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "updateGuardian"
                 </label>
                 <span class="invalid-feedback"><?php echo $groups_err; ?></span>
             <?php } ?>
+            <label>
+                <input style="width: 100%; height: 30px;" type="text" name="group[]" placeholder="Ajouter un groupe" />
+            </label>
         </div>
 
         <!-- Submit button -->
