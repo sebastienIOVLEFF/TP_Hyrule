@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
 
 require_once 'service/command_executor.php';
 require_once 'service/fetch_data_service.php';
+require_once 'service/regex.php';
 $_SESSION["groups"] = getGroups();
 $_SESSION["users"] = getUsers();
 ?>

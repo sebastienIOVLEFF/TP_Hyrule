@@ -5,9 +5,25 @@ $username_err = "";
 
 // Traitement du formulaire si une commande est soumise
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
-    if (!empty($_POST["name"])) {
-        $username = escapeshellarg($_POST["name"]);
-        $groups = !empty($_POST["group"]) ? escapeshellarg(implode(',', $_POST["group"])) : "";
+    // validation
+    if (isValidUsername($_POST["name"])) {
+        if(!empty($_POST["group"])) {
+            foreach ($_POST["group"] as $group) {
+                if(!isValidGroupName($group)) {
+                    $group_err = "Veuillez entrer un nom de groupe valide.";
+                    exit;
+                }
+            }
+        }
+        if(!empty($_POST["password"])) {
+            if(!isValidPassword($_POST["password"])) {
+                $password_err = "Veuillez entrer un mot de passe valide.";
+                exit;
+            }
+        }
+        // Traitement des données
+
+        $groups = !empty($_POST["group"]) ? implode(',', $_POST["group"]) : "";
 
         // Create the user without setting a password initially
         $payload = "sudo useradd -m";
@@ -34,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
     } else {
-        $username_err = "Veuillez entrer un nom d'utilisateur.";
+        $username_err = "nom d'utilisateur non valide.";
     }
 }
 ?>
@@ -52,11 +68,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
         </div>
         <!-- user name input -->
         <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Nom d'utilisateur">
+            <input type="text" name="name" class="form-control" placeholder="Nom d'utilisateur" required>
             <span class="invalid-feedback"><?php echo $username_err; ?></span>
         </div>
         <!-- Scrollable checkbox section -->
         <div class="form-group checkbox-container">
+        <span class="invalid-feedback"><?php echo $group_err; ?></span>
             <?php foreach ($groups as $group) { ?>
                 <label>
                     <input type="checkbox" name="group[]"
@@ -72,6 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
         <!-- Password input -->
         <div class="form-group">
             <input type="password" name="password" class="form-control" placeholder="Mot de passe">
+            <span class="invalid-feedback"><?php echo $password_err; ?></span>
         </div>
 
         <!-- Submit button -->
