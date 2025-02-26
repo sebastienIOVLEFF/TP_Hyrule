@@ -43,6 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
 
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <div style="padding-bottom: 20px;">
+        <p style="border: 1px solid #ccc; padding: 10px;">ce formulaire permet de créer un nouvel utilisateur. On peut optionnelement lui atribuer des groupes.</p>
+    </div>
     <div class="form-container">
         <div class="form-group">
             <input type="hidden" value="addGuardian" name="action" class="form-control">
