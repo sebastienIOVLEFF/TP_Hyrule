@@ -1,7 +1,7 @@
 <?php
 
 $groups = ["group1", "group2", "group3", "group4", "group5", "group6", "group7", "group8", "group9", "group10"];//$_SESSION["groups"];
-$username_err = "";
+$username_err = $group_err = $password_err = "";
 
 // Traitement du formulaire si une commande est soumise
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
