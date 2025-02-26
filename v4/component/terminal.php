@@ -1,7 +1,7 @@
 <?php
 
 // Chemin du fichier log
-$logFile = __DIR__ .  "/../logs/". $_SESSION['username']." - ". $_SESSION['pageName'].".log";
+$logFile = __DIR__ . "/../logs/" . $_SESSION['username'] . " - " . $_SESSION['pageName'] . ".log";
 
 // Vérifier si le fichier log existe, sinon le créer
 if (!file_exists($logFile)) {
@@ -25,8 +25,8 @@ if (isset($_GET['toggle_terminal'])) {
 ?>
 
 <div style="margin: 10px;">
-    <button id="toggleTerminalBtn">
-        <?= $_SESSION['terminal_visible'] ? "Masquer le terminal" : "Afficher le terminal" ?>
+    <button id="toggleTerminalBtn" <?= !$_SESSION['terminal_visible'] ? "style='bottom: 0;'" : "" ?>>
+        <?= $_SESSION['terminal_visible'] ? "▽" : "△" ?>
     </button>
 </div>
 
@@ -35,4 +35,3 @@ if (isset($_GET['toggle_terminal'])) {
 </div>
 
 <script src="component/terminal.js"></script>
-

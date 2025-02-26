@@ -8,10 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
           .then(data => {
               if (data.visible) {
                   terminalContainer.style.display = "block";
-                  toggleButton.textContent = "Masquer le terminal";
+                  toggleButton.textContent = "▽";
+                  toggleButton.style.bottom = "35vh";
               } else {
                   terminalContainer.style.display = "none";
-                  toggleButton.textContent = "Afficher le terminal";
+                  toggleButton.textContent = "△";
+                  toggleButton.style.bottom = "0";
               }
           });
   });
