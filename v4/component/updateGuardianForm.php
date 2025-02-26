@@ -1,6 +1,7 @@
 <?php
 
-$groups = array("Group1", "Group2", "Group3");
+$groups = ["group1", "group2", "group3", "group4", "group5", "group6", "group7", "group8", "group9", "group10"];//$_SESSION["groups"];
+$users = ["user1", "user2", "user3", "user4", "user5", "user6", "user7", "user8", "user9", "user10"];// //$_SESSION["users"];
 $username_err = $groups_err = "";
 
 // Traitement du formulaire si une commande est soumise
@@ -35,10 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "updateGuardian"
             <input type="hidden" value="updateGuardian" name="action" class="form-control">
         </div>
         <!-- user name input -->
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" name="name" class="form-control">
-            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+        <div class="form-group checkbox-container">
+            <?php foreach ($users as $user) { ?>
+                <label>
+                    <input type="checkbox" name="user[]"
+                        value="<?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>" />
+                    <?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>
+                </label>
+                <span class="invalid-feedback"><?php echo $groups_err; ?></span>
+            <?php } ?>
         </div>
         <!-- Scrollable checkbox section -->
         <div class="form-group checkbox-container">
