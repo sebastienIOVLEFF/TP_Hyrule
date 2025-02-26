@@ -6,12 +6,10 @@ $user_err = $groups_err = "";
 
 // Traitement du formulaire si une commande est soumise
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "updateGuardian") {
-    logCommand("test", "test");
     if (empty($_POST["group"])) {
         $groups_err = "Veuillez selectionner au moins un groupe.";
         exit;
     } elseif (!empty($_POST["user"])) {
-    logCommand("test", "test2");
     $username = escapeshellarg($_POST["user"]);
         $groups = escapeshellarg(implode(',', $_POST["group"]));
 
@@ -21,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "updateGuardian"
         
         $output = executeCommand($payload);
 
-        logCommand($payload, $output);
         $_SESSION["last_command"] = ["cmd" => $payload, "output" => $output];
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
