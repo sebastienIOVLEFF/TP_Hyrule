@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "changePermissio
         </div>
         <!-- user name input -->
         <div class="form-group">
-            <input type="text" name="path" class="form-control" placeholder="Entrez un nom d'utilisateur">
+            <input type="text" name="path" class="form-control" placeholder="Entrez un fichier">
             <span class="invalid-feedback"><?php echo $path_err; ?></span>
         </div>
         <!-- Submit button -->
