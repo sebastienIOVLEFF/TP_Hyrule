@@ -1,5 +1,24 @@
 body {
-  background-image: radial-gradient(circle at center center, transparent 0%,rgb(33,33,33) 99%),repeating-linear-gradient(0deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(163, 163, 163,0.2) 0px, rgba(163, 163, 163,0.2) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, rgb(33,33,33),rgb(33,33,33));
+  background-image: radial-gradient(
+      circle at center center,
+      transparent 0%,
+      rgb(33, 33, 33) 99%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(163, 163, 163, 0.2) 0px,
+      rgba(163, 163, 163, 0.2) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(163, 163, 163, 0.2) 0px,
+      rgba(163, 163, 163, 0.2) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33));
 }
 
 /* Global Styles */
@@ -106,7 +125,7 @@ body.dashboard {
   font-family: monospace;
   position: fixed;
   width: 100%;
-  
+
   bottom: 0;
   z-index: 1001;
 }
@@ -114,13 +133,15 @@ body.dashboard {
   position: fixed;
   bottom: 35vh; /* Juste au-dessus du terminal */
   left: 10px;
-  padding: 10px;
+  width: 30px;
+
   background: #444;
   color: #fff;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   z-index: 1002; /* Au-dessus du terminal */
+  height: 25px;
 }
 
 .form-container {
@@ -169,88 +190,87 @@ body.dashboard {
   background-color: #0056b3;
 }
 
+/* Accordion Container */
+.accordion {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
 
-            /* Accordion Container */
-            .accordion {
-              width: 100%;
-              max-width: 1000px;
-              margin: auto;
-          }
-        
-          /* Accordion Button */
-          .accordion-item {
-              margin-bottom: 5px;
-              border: 1px solid #ccc;
-              border-radius: 5px;
-              overflow: hidden;
-          }
-        
-          .accordion-header {
-              background-color: #00ab5b;
-              color: white;
-              padding: 10px;
-              cursor: pointer;
-              font-size: 16px;
-              text-align: left;
-              width: 100%;
-              border: none;
-              outline: none;
-              transition: background 0.3s;
-          }
-        
-          .accordion-header:hover {
-              background-color: #004728;
-          }
-        
-          /* Accordion Content (Hidden by Default) */
-          .accordion-content {
-              display: none;
-              padding: 15px;
-              background: #1e1e1e;
-          }
-        
-          /* Scrollable Checkbox Container */
-          .checkbox-container {
-              display: flex;
-              flex-direction: column;
-              gap: 5px;
-              max-height: 150px;
-              overflow-y: auto;
-              border: 1px solid #ccc;
-              padding: 5px;
-              width: 100%;
-              max-width: 350px;
-          }
-        
-          /* Form Inputs */
-          .form-group {
-              margin-bottom: 10px;
-          }
-        
-          .form-group label {
-              font-weight: bold;
-          }
-        
-          .form-control {
-              width: 100%;
-              padding: 8px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-          }
-        
-          /* Submit Button */
-          .btn-primary {
-              padding: 8px 15px;
-              background-color: #00ab5b;
-              color: white;
-              border: none;
-              border-radius: 4px;
-              cursor: pointer;
-          }
-        
-          .btn-primary:hover {
-              background-color: #004728;
-          }
+/* Accordion Button */
+.accordion-item {
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #00ab5b;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: left;
+  width: 100%;
+  border: none;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.accordion-header:hover {
+  background-color: #004728;
+}
+
+/* Accordion Content (Hidden by Default) */
+.accordion-content {
+  display: none;
+  padding: 15px;
+  background: #1e1e1e;
+}
+
+/* Scrollable Checkbox Container */
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Form Inputs */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Submit Button */
+.btn-primary {
+  padding: 8px 15px;
+  background-color: #00ab5b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #004728;
+}
 /* CARD CONTAINER */
 .cardContainer {
   display: flex;
@@ -274,16 +294,15 @@ body.dashboard {
   background-position: center;
   overflow: hidden;
   text-shadow: rgb(0, 0, 0) 1px 0 20px;
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
 }
-
 
 .card:hover {
   transform: scale(1.02) translateZ(0);
-  box-shadow: inset -2px 3px 8px 5px #0000002c, 2px 5px 16px 0px #0B325E, inset 0 0 0 1000px rgba(0,0,0,.55), 5px 6px 15px 5px rgba(0,0,0,0);
-  
-  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  box-shadow: inset -2px 3px 8px 5px #0000002c, 2px 5px 16px 0px #0b325e,
+    inset 0 0 0 1000px rgba(0, 0, 0, 0.55), 5px 6px 15px 5px rgba(0, 0, 0, 0);
 
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
 
 .card img {
@@ -312,7 +331,7 @@ body.dashboard {
   color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 5px;
-  top:100vh;
+  top: 100vh;
   transition: background 0.3s;
 }
 
@@ -323,16 +342,16 @@ body.dashboard {
 /* Responsive */
 @media screen and (max-width: 768px) {
   .header {
-      flex-direction: column;
-      text-align: center;
-      padding: 15px;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
   }
   .nav ul {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: column;
+    gap: 10px;
   }
   .cardContainer {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 }

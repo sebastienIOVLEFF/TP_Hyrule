@@ -9,7 +9,7 @@ $logFile = __DIR__ . "/../logs/" . $_SESSION['username'] . " - " . $_SESSION['pa
 
 // Vérifier si le fichier log existe, sinon le créer
 if (!file_exists($logFile)) {
-    file_put_contents($logFile, "=== Terminal Log ===\n");
+    file_put_contents($logFile, "=== Pierre des Archives ===\n");
 }
 
 // Lire le fichier log

@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["command"])) {
     $output = shell_exec($command);
 }
 
-require_once 'component/command_executor.php';
-require_once 'component/fetch_data_service.php';
+require_once 'service/command_executor.php';
+require_once 'service/fetch_data_service.php';
 $_SESSION["groups"] = getGroups();
 $_SESSION["users"] = getUsers();
 ?>
