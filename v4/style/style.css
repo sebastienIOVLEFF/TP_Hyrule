@@ -92,6 +92,7 @@ body.dashboard {
 .page-content {
   padding: 40px;
   color: white;
+  margin-bottom: 35vh;
 }
 
 /* TERMINAL */
@@ -103,10 +104,11 @@ body.dashboard {
   overflow-y: auto;
   border-top: 1px solid #0f0;
   font-family: monospace;
-  position: absolute;
+  position: fixed;
   width: 100%;
   
   bottom: 0;
+  z-index: 1001;
 }
 #toggleTerminalBtn {
   position: fixed;
@@ -118,7 +120,7 @@ body.dashboard {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  z-index: 1001; /* Au-dessus du terminal */
+  z-index: 1002; /* Au-dessus du terminal */
 }
 
 .form-container {

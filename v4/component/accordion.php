@@ -20,7 +20,7 @@ class Acc
             <div class="accordion-content">
 HTML;
 
-            require $item;
+            require "forms/$item";
 
             echo <<<HTML
             </div>
