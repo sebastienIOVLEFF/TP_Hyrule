@@ -23,7 +23,7 @@ require_once 'service/command_executor.php';
 <body>
     <?php require 'component/header.php'; ?>
     <div class="page-content">
-        <?php require 'nouveau_sanctuaire.php'; ?>
+        <?php require 'forms/changePermission.php'; ?>
     </div>
     <?php require 'component/terminal.php'; ?>
 </body>
