@@ -23,9 +23,7 @@ $_SESSION["pageName"] = "Ordres et Aliances";
 <body>
     <?php require_once 'component/header.php'; ?>
     <div class="page-content">
-        <p>
-            page Ordres et Aliances
-        </p>
+        <h2 style="text-align: center; padding-bottom: 15px;">Outils de gestion des Ordres et Alliances :</h2>
     </div>
     <?php require_once 'component/terminal.php'; ?>
 </body>
