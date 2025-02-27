@@ -8,7 +8,8 @@ if (!(isset($_SESSION['username']) && isset($_SESSION['loggedin']))) {
 }
 
 $_SESSION["pageName"] = "Ordres et Aliances";
-
+require_once "component/accordion.php";
+require_once "service/command_executor.php";
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +25,7 @@ $_SESSION["pageName"] = "Ordres et Aliances";
     <?php require_once 'component/header.php'; ?>
     <div class="page-content">
         <h2 style="text-align: center; padding-bottom: 15px;">Outils de gestion des Ordres et Alliances :</h2>
+        <?php $accordion = new Acc(['changeGroup.php']); ?>
     </div>
     <?php require_once 'component/terminal.php'; ?>
 </body>
