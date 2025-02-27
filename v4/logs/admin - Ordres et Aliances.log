@@ -1,1 +1,17 @@
 === Pierre des Archives ===
+$ sudo groupadd "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo groupmod -n "" "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo groupmod -n "ffe" "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo groupmod -n "" "test"
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+

@@ -35,11 +35,7 @@ $_SESSION["users"] = getUsers();
 <body>
     <?php require_once 'component/header.php'; ?>
     <div class="page-content">
-
-        <p>
-            page Compte des Gardiens
-        </p>
-        <h2>Exécution de commandes</h2>
+        <h2 style="text-align: center; padding-bottom: 15px;">Outils de gestion des Gardiens :</h2>
 
 
         <?php require_once 'component/accordion.php'; ?>

@@ -16,10 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
                 }
             }
             if ($group_err == "") {
-                if (!empty($_POST["password"])) {
-                    if (!isValidPassword($_POST["password"])) {
-                        $password_err = "Veuillez entrer un mot de passe valide.";
-                    }
+                if (!empty($_POST["password"]) && !isValidPassword($_POST["password"])) {
+                    $password_err = "Veuillez entrer un mot de passe valide.";
                 }
                 if ($password_err == "") {// Traitement des données
 
