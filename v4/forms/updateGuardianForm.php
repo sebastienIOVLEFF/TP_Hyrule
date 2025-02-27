@@ -8,15 +8,14 @@ $user_err = $groups_err = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "updateGuardian") {
     if (empty($_POST["group"])) {
         $groups_err = "Veuillez selectionner au moins un groupe.";
-        exit;
     } elseif (!empty($_POST["user"])) {
-    $username = escapeshellarg($_POST["user"]);
+        $username = escapeshellarg($_POST["user"]);
         $groups = escapeshellarg(implode(',', $_POST["group"]));
 
         $payload = "sudo usermod -a -G";
         $payload .= " $groups";
         $payload .= " $username";
-        
+
         $output = executeCommand($payload);
 
         $_SESSION["last_command"] = ["cmd" => $payload, "output" => $output];
@@ -30,13 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "updateGuardian"
 
 
 <script>
-document.getElementById("noEmptyText").addEventListener("submit", function(event) {
-    document.querySelectorAll('input[name="group[]"]').forEach(input => {
-        if (!input.value.trim()) {
-            input.disabled = true; // Désactive les champs vides pour ne pas les envoyer
-        }
+    document.getElementById("noEmptyText").addEventListener("submit", function (event) {
+        document.querySelectorAll('input[name="group[]"]').forEach(input => {
+            if (!input.value.trim()) {
+                input.disabled = true; // Désactive les champs vides pour ne pas les envoyer
+            }
+        });
     });
-});
 </script>
 
 
@@ -51,8 +50,7 @@ document.getElementById("noEmptyText").addEventListener("submit", function(event
             <span class="invalid-feedback"><?php echo $user_err; ?></span>
             <?php foreach ($users as $user) { ?>
                 <label>
-                    <input type="radio" name="user"
-                        value="<?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>" />
+                    <input type="radio" name="user" value="<?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>" />
                     <?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>
                 </label>
             <?php } ?>
@@ -68,7 +66,8 @@ document.getElementById("noEmptyText").addEventListener("submit", function(event
                 </label>
             <?php } ?>
             <label>
-                <input id="noEmptyText" style="width: 100%; height: 30px;" type="text" name="group[]" placeholder="Ajouter un groupe" />
+                <input id="noEmptyText" style="width: 100%; height: 30px;" type="text" name="group[]"
+                    placeholder="Ajouter un groupe" />
             </label>
         </div>
 

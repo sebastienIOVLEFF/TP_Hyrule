@@ -7,48 +7,51 @@ $username_err = $group_err = $password_err = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
     // validation
     if (isValidUsername($_POST["name"])) {
-        if(!empty($_POST["group"])) {
+        if (empty($_POST["group"])) {
+            $group_err = "Veuillez choisir au moins un groupe.";
+        } else {
             foreach ($_POST["group"] as $group) {
-                if(!isValidGroupName($group)) {
+                if (!isValidGroupName($group)) {
                     $group_err = "Veuillez entrer un nom de groupe valide.";
+                }
+            }
+            if ($group_err == "") {
+                if (!empty($_POST["password"])) {
+                    if (!isValidPassword($_POST["password"])) {
+                        $password_err = "Veuillez entrer un mot de passe valide.";
+                    }
+                }
+                if ($password_err == "") {// Traitement des données
+
+                    $groups = !empty($_POST["group"]) ? implode(',', $_POST["group"]) : "";
+
+                    // Create the user without setting a password initially
+                    $payload = "sudo useradd -m";
+                    if (!empty($groups)) {
+                        $payload .= " -G $groups";
+                    }
+                    $payload .= " $username";
+
+                    $output = executeCommand($payload);
+
+                    if (!empty($_POST["password"])) {
+                        $password = $_POST["password"];
+                        $chpasswdCmd = "echo '$username:$password' | sudo chpasswd";
+                        $result = shell_exec($chpasswdCmd);
+
+                        // log the censored version of the command
+                        $censored_password = str_repeat("*", strlen($password));
+                        $censored_chpasswdCmd = "echo '$username:$censored_password' | sudo chpasswd";
+
+                        $output .= "\n" . logCommand($censored_chpasswdCmd, $result) . "\n";
+                    }
+
+                    $_SESSION["last_command"] = ["cmd" => $payload, "output" => $output];
+                    header("Location: " . $_SERVER['PHP_SELF']);
                     exit;
                 }
             }
         }
-        if(!empty($_POST["password"])) {
-            if(!isValidPassword($_POST["password"])) {
-                $password_err = "Veuillez entrer un mot de passe valide.";
-                exit;
-            }
-        }
-        // Traitement des données
-
-        $groups = !empty($_POST["group"]) ? implode(',', $_POST["group"]) : "";
-
-        // Create the user without setting a password initially
-        $payload = "sudo useradd -m";
-        if (!empty($groups)) {
-            $payload .= " -G $groups";
-        }
-        $payload .= " $username";
-
-        $output = executeCommand($payload);
-
-        if (!empty($_POST["password"])) {
-            $password = $_POST["password"];
-            $chpasswdCmd = "echo '$username:$password' | sudo chpasswd";
-            $result = shell_exec($chpasswdCmd);
-
-            // log the censored version of the command
-            $censored_password = str_repeat("*", strlen($password));
-            $censored_chpasswdCmd = "echo '$username:$censored_password' | sudo chpasswd";
-
-            $output .= "\n" . logCommand($censored_chpasswdCmd, $result) . "\n";
-        }
-
-        $_SESSION["last_command"] = ["cmd" => $payload, "output" => $output];
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
     } else {
         $username_err = "nom d'utilisateur non valide.";
     }
@@ -60,7 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <div style="padding-bottom: 20px;">
-        <p style="border: 1px solid #ccc; padding: 10px;">ce formulaire permet de créer un nouvel utilisateur. On peut optionnelement lui atribuer des groupes.</p>
+        <p style="border: 1px solid #ccc; padding: 10px;">ce formulaire permet de créer un nouvel utilisateur. On peut
+            optionnelement lui atribuer des groupes.</p>
     </div>
     <div class="form-container">
         <div class="form-group">
@@ -73,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
         </div>
         <!-- Scrollable checkbox section -->
         <div class="form-group checkbox-container">
-        <span class="invalid-feedback"><?php echo $group_err; ?></span>
+            <span class="invalid-feedback"><?php echo $group_err; ?></span>
             <?php foreach ($groups as $group) { ?>
                 <label>
                     <input type="checkbox" name="group[]"

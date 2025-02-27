@@ -10,3 +10,19 @@ C:\wamp64\www\tp_hyrule\v4
 $ mkdir
 La syntaxe de la commande n'est pas correcte.
 
+$ sudo useradd -m 
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo useradd -m 
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo useradd -m 
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
+$ sudo useradd -m 
+'sudo' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex‚cutable ou un fichier de commandes.
+
