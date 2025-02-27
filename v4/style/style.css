@@ -339,6 +339,11 @@ body.dashboard {
   background: #0056b3;
 }
 
+.invalid-feedback {
+  color: red;
+  font-size: 0.7rem;
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
   .header {

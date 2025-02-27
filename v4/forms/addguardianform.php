@@ -7,7 +7,7 @@ $username_err = $group_err = $password_err = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "addGuardian") {
     // validation
     if (isValidUsername($_POST["name"])) {
-        if (empty($_POST["group"])) {
+        if (empty($_POST["group"]) || $_POST["group"][0] == "") {
             $group_err = "Veuillez choisir au moins un groupe.";
         } else {
             foreach ($_POST["group"] as $group) {
