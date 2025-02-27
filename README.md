@@ -12,7 +12,8 @@
 
 ### 2.1- commandes optionnelles pour le developpement
   - sudo apt install git 
-  - installer un package pour connecter sa machine a github //optionnel
+  - sudo apt install gh 
+  - sudo auth login  //pour connecter sa machine a github
   - cd chemin/projet
   - git clone https://github.com/sebastienIOVLEFF/TP_Hyrule.git   //besoins des accès
   - git checkout <branche-finale>
