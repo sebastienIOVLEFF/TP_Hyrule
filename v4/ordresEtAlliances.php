@@ -25,7 +25,7 @@ require_once "service/command_executor.php";
     <?php require_once 'component/header.php'; ?>
     <div class="page-content">
         <h2 style="text-align: center; padding-bottom: 15px;">Outils de gestion des Ordres et Alliances :</h2>
-        <?php $accordion = new Acc(['changeGroup.php']); ?>
+        <?php $accordion = new Acc(['changeGroupForm.php']); ?>
     </div>
     <?php require_once 'component/terminal.php'; ?>
 </body>
