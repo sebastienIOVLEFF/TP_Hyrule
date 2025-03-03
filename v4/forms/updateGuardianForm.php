@@ -1,7 +1,7 @@
 <?php
 
-$groups = ["group1", "group2", "group3", "group4", "group5", "group6", "group7", "group8", "group9", "group10"];//$_SESSION["groups"];
-$users = ["user1", "user2", "user3", "user4", "user5", "user6", "user7", "user8", "user9", "user10"];// //$_SESSION["users"];
+$groups = $_SESSION["groups"];
+$users = $_SESSION["users"];
 $user_err = $groups_err = "";
 
 // Traitement du formulaire si une commande est soumise
